@@ -1,6 +1,11 @@
 pipeline {
   agent any 
   stages {
+    stage('Build') {
+      steps {
+        sh "mvn compile"
+      }
+    }   
     
     stage('Test') {
       steps {
@@ -8,7 +13,7 @@ pipeline {
       }
      post {
       always {
-        junit '*/target/surefire-reports/TEST.xml'
+        junit '**/TEST*.xml'
       }
      }
   }
@@ -22,10 +27,6 @@ pipeline {
                     }
                 }
         }
-       stage('Build') {
-      steps {
-        sh "mvn compile"
-      }
-    }   
+       
  }
 }
