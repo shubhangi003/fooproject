@@ -17,8 +17,8 @@ Verify Login Success Message
 
 User Select Date
      Press Keys         id=reset                 RETURN
-     Input Text         id=start                   04/21/2021
-     Input Text         id=end                      04/24/2021
+     Input Text         id=start                   04/25/2021
+     Input Text         id=end                      04/25/2021
 User Click Continue
      Click Element      ${CONTINUE_BUTTON}
 
