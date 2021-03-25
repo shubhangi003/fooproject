@@ -77,9 +77,9 @@ User Select Date
      Input Text         id=end                      04/25/2021
      Page Should Contain              When do you want to make your trip?
 User Click Continue
-     Click Element        //*[@id="continue"]
+     Click Element           //*[@id="continue"]
 User Try to Book a Car
-     Click Element        //*[@id="bookV40pass5"]
+     Click Element           //*[@id="bookQ7pass5"]
 Application Should Display Error Message
      Sleep  5s
      Alert Should Be Present              You need to be logged in to continue.
