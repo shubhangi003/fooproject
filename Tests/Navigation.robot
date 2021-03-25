@@ -27,7 +27,7 @@ Make a booking of car
        And User Enter Email and Password
        Then User Click Login Button
        Then Verify Login Success Message
-       #Then User Select Date
+       Then User Select Date
        Then User Click Continue
        Then User Scroll the Page and Select car
        Then User Fill Up The Information
