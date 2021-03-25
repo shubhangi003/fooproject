@@ -6,7 +6,6 @@ Test Teardown      Close Browser
 *** Keywords ***
 
 
-
 *** Variables ***
 #${URL}               http://rental35.infotiv.net/
 #${BROWSER}           Chrome
@@ -57,4 +56,5 @@ Login with wrong format
     Wait until page contains         Wrong e-mail or password
 
     Close Browser
+
 
