@@ -23,9 +23,9 @@ User Click Continue
      Click Element      ${CONTINUE_BUTTON}
 
 User Scroll the Page and Select car
-     Wait Until Element Is Visible       //*[@id="bookV40pass5"]
-     Element Should Be Visible              //*[@id="bookV40pass5"]
-     Press Keys                          //*[@id="bookV40pass5"]        RETURN
+     Wait Until Element Is Visible            //*[@id="bookQ7pass5"]
+     Element Should Be Visible               //*[@id="bookQ7pass5"]
+     Press Keys                             //*[@id="bookQ7pass5"]        RETURN
 
 User Fill Up The Information
      Wait Until Element Is Visible         //*[@id="questionText"]
