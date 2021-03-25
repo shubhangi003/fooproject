@@ -26,12 +26,7 @@ User can create a new user by providing available and correct username and passw
     [Documentation]                  Create a new user
     [Tags]                           TestGherkin 3
     Given User Opens an Application
-    Then User Clicks on Create user Button
-    Then User writes Firstname and Lastname
-    Then User writes valid Phonenumber
-    Then User writes E-mail and Confirms E-mail
-    Then User writes Password and Confirms Password
-    Then User Clicks Create Button
+    Then User Enter Email and Password
     Then Verify Login Success Message
     Then User Select Date
     Then User Click Continue
@@ -44,34 +39,18 @@ User can create a new user by providing available and correct username and passw
 *** Keywords ***
 User Opens an Application
     Open browser                     ${URL}                          ${BROWSER}
-User Clicks on Create user Button
-    Click Element                    ${CREATE_USER_BUTTON}
-User writes Firstname and Lastname
-    Click Element                    ${FNAME_TEXTBOX}
-    Input Text                       ${FNAME_TEXTBOX}              Danny
-    Click Element                    ${LNAME_TEXTBOX}
-    Input Text                       ${LNAME_TEXTBOX}              Brett
-User writes valid Phonenumber
-    Click Element                    ${PHONENO_TEXTBOX}
-    Input Text                       ${PHONENO_TEXTBOX}           0012412509
-User writes E-mail and Confirms E-mail
-    Click Element                    ${EMAIL_TEXTBOX}
-    Input Text                       ${EMAIL_TEXTBOX}             danny123@gmail.com
-    Click Element                    ${CONFIRM_EMAIL_TEXTBOX}
-    Input Text                       ${CONFIRM_EMAIL_TEXTBOX}     danny123@gmail.com
-User writes Password and Confirms Password
-     Click Element                   ${PASSWORD_TEXTBOX}
-     Input Text                      ${PASSWORD_TEXTBOX}             hello1234
-     Click Element                   ${CONFIRM_PASSWORD_TEXTBOX}
-     Input Text                      ${CONFIRM_PASSWORD_TEXTBOX}     hello1234
-User Clicks Create Button
-     Click Element                  ${CREATE_BUTTON}
+   
+User Enter Email and Password
+    Click Element                    ${LOGIN_TEXTBOX}
+    Input Text                       ${LOGIN_TEXTBOX}                ana.carin@gmail.com
+    Click Element                    ${PASSWORD_TEXTBOX}
+    Input Text                       ${PASSWORD_TEXTBOX}             anacarin
 Verify Login Success Message
     Wait Until Element Is Visible    ${SUCCESS_LOGIN_LEBEL}
     Element Should Be Visible        ${SUCCESS_LOGIN_LEBEL}
 User Select Date
      Press Keys         id=reset                 RETURN
-     Input Text         id=start                   04/23/2021
+     Input Text         id=start                   04/24/2021
      Input Text         id=end                     04/25/2021
 User Click Continue
      Click Element      ${CONTINUE_BUTTON}
@@ -83,7 +62,7 @@ User Fill Up The Information
      Wait Until Element Is Visible       //*[@id="questionText"]
      Element Should Be Visible           //*[@id="questionText"]
      Input Text                          id=cardNum                      1230067812245678
-     Input Text                          id=fullName                        danny
+     Input Text                          id=fullName                        anacarin
      #month Selction
      Click Element                       //*[@id="confirmSelection"]/form/select[1]
       Wait Until Element Is Visible      //*[@id="month6"]
