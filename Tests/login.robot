@@ -72,14 +72,14 @@ User Open Browser
     Open browser                     ${URL}                          ${BROWSER}
 User Select Date
      Click Element      id=start
-     Input Text         id=start                   04/22/2021
+     Input Text         id=start                   04/25/2021
      Click Element      id=end
      Input Text         id=end                      04/25/2021
      Page Should Contain              When do you want to make your trip?
 User Click Continue
      Click Element        //*[@id="continue"]
 User Try to Book a Car
-     Click Element        //*[@id="bookQ7pass5"]
+     Click Element        //*[@id="bookV40pass5"]
 Application Should Display Error Message
      Sleep  5s
      Alert Should Be Present              You need to be logged in to continue.
