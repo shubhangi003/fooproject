@@ -5,7 +5,7 @@ Test Teardown                   Close Browser
 
 *** Variables ***
 ${URL}                          https://rental35.infotiv.net/
-${BROWSER}                      Chrome
+${BROWSER}                      headlesschrome
 ${LOGIN_TEXTBOX}                //*[@id="email"]
 ${PASSWORD_TEXTBOX}             //*[@id="password"]
 ${LOGIN_BUTTON}                 //*[@id="login"]
