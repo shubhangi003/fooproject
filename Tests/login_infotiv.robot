@@ -8,7 +8,7 @@ Test Teardown      Close Browser
 
 *** Variables ***
 #${URL}               http://rental35.infotiv.net/
-#${BROWSER}           Chrome
+#${BROWSER}           headlesschrome
 
 
 *** Test Cases ***
