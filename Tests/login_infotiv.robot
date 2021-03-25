@@ -40,7 +40,6 @@ Invalid login for infotiv car rental
     Input password                   id=password               aaaaaaaa
     Press Keys                       //*[@id="login"]      RETURN
     Wait until page contains         Wrong e-mail or password
-
     Close Browser
 
 
