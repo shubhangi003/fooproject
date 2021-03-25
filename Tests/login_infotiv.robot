@@ -16,7 +16,7 @@ Test Teardown      Close Browser
 Valid Login for infotiv car rental
     [Documentation]                  This is information about valid login test
     [Tags]                           Test 1
-    Open browser                     about:blank        chrome     #${BROWSER}
+    Open browser                     about:blank        headlesschrome      #${BROWSER}
     Go To                            http://rental35.infotiv.net/       #${URL}
     Wait Until Page Contains         Infotiv Car Rental
     Input Text                       id=email             ana.carin@gmail.com
@@ -33,7 +33,7 @@ Valid Login for infotiv car rental
 Invalid login for infotiv car rental
    [Documentation]                   This is information about invalid login test
     [Tags]                           Test 2
-    Open browser                     about:blank        chrome     #${BROWSER}
+    Open browser                     about:blank        headlesschrome     #${BROWSER}
     Go To                            http://rental35.infotiv.net/       #${URL}
     Wait Until Page Contains         Infotiv Car Rental
     Input Text                       id=email             ana.carin@gmail.com
@@ -46,7 +46,7 @@ Invalid login for infotiv car rental
 
 Login with wrong format
     [Tags]                           Test 3
-    Open browser                     about:blank        chrome     #${BROWSER}
+    Open browser                     about:blank        headlesschrome     #${BROWSER}
     Go To                            http://rental35.infotiv.net/       #${URL}
     Wait Until Page Contains         Infotiv Car Rental
     Input Text                       id=email             ana.carin
