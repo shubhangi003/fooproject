@@ -84,3 +84,4 @@ User Sign out
      Click Element                     //*[@id="logout"]
 Should Close the browser
      Close Browser
+     
