@@ -12,6 +12,17 @@ ${LOGIN_BUTTON}                 //*[@id="login"]
 ${SUCCESS_LOGIN_LEBEL}          //*[@id="welcomePhrase"]
 ${LOGIN_ERROR_LEBEL}            //*[@id="signInError"]
 *** Test Cases ***
+Book A car Without Logged In
+    [Documentation]   This is Basic information about When user try
+     ...               to book car without logging in then it display error message
+    [Tags]             Valid Login Test
+    Given User Open Browser
+    When User Select Date
+    And User Click Continue
+    And User Try to Book a Car
+    Then Application Should Display Error Message
+    Then Close current browser
+
 Login With Invalid Credential
     [Documentation]    This is Basic information about
      ...               test when user give invalid credential it display error message
@@ -19,6 +30,7 @@ Login With Invalid Credential
     Given User Opens An Application
     When User Enter Invalid Password
     Then Error Message Display
+    Then Close current browser
 
 Login With Valid Credential
     [Documentation]   This is Basic information aboutWhen user give
@@ -30,15 +42,7 @@ Login With Valid Credential
     Then Verify Login Success Message
     Then Close current browser
 
-Book A car Without Logged In
-    [Documentation]   This is Basic information about When user try
-     ...               to book car without logging in then it display error message
-    [Tags]             Valid Login Test
-    Given User Open Browser
-    When User Select Date
-    And User Click Continue
-    And User Try to Book a Car
-    Then Application Should Display Error Message
+
 
 
 
@@ -78,11 +82,13 @@ User Try to Book a Car
      Click Element        //*[@id="bookQ7pass5"]
 Application Should Display Error Message
      Sleep  5s
-     Alert Should Be Present     You need to be logged in to continue.
+     Alert Should Be Present              You need to be logged in to continue.
 User Click MyPage To See Details
-     Click Element         //*[@id="mypage"]
+     Wait Until Element Is Visible          //*[@id="mypage"]
+     Click Element                          //*[@id="mypage"]
 User Click Show History
-     Set Browser Implicit Wait         5
-     Click Element          //*[@id="show"]
+     #Set Browser Implicit Wait         5
+     Wait Until Element Is Visible           //*[@id="show"]
+     Click Element                           //*[@id="show"]
 User Click Hide History
       Click Element         //*[@id="hide"]
