@@ -17,11 +17,13 @@ pipeline {
       }
      }
   }
-   stage('Code Coverage'){
-        steps{
-            jacoco changeBuildStatus: true, runAlways: true, skipCopyOfSrcFiles: true
-        }
+   stage('Code Coverage') {
+     steps {
+        sh "mvn test"
+        junit '**/TEST*.xml'
+        step( [ $class: 'JacocoPublisher' ] )
      }
+  }
     stage('newman') {
             steps {
                 sh 'newman run RestfulBooker.postman_collection.json --environment RestfulBooker.postman_environment.json --reporters junit'
