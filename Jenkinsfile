@@ -29,7 +29,7 @@ pipeline {
                 }
              }
           }
-    stage('Publish Test Coverage Report') { 
+    stage('Code Coverage Report') { 
          steps { 
            step(
                  [
