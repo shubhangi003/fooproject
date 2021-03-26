@@ -17,30 +17,14 @@ pipeline {
       }
      }
   }
-   stage('Generate Test Report') {
-        steps {
-           script {
-               try { 
-                 sh 'mvn org.jacoco:jacoco-maven-plugin:report'
-                   } finally { 
-               junit 'target/surefire-reports/*.xml'
-                   } 
-                }
-             }
-          }
-    stage('Publish Test Coverage Report') { 
-         steps { 
-           step(
-                 [
-                   $class: 'JacocoPublisher',
-                   execPattern: 'target/*.exec', 
-                   classPattern: 'target/classes', 
-                   sourcePattern: 'src/main/java', 
-                   exclusionPattern: 'src/test*' 
-                 ]
-               ) 
-          } 
-    }
+    
+   stage('Code Coverage') {
+     steps {
+        sh "mvn test"
+        junit '**/TEST*.xml'
+        step( [ $class: 'JacocoPublisher' ] )
+     }
+  }
     stage('newman') {
             steps {
                 sh 'newman run RestfulBooker.postman_collection.json --environment RestfulBooker.postman_environment.json --reporters junit'
