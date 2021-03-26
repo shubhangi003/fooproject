@@ -79,7 +79,9 @@ User Select Date
 User Click Continue
      Click Element           //*[@id="continue"]
 User Try to Book a Car
-     Click Element           //*[@id="bookQ7pass5"]
+     Wait Until Element Is Visible               //*[@id="bookQ7pass5"]
+     Element Should Be Visible                    //*[@id="bookQ7pass5"]
+     Click Element                               //*[@id="bookQ7pass5"]
 Application Should Display Error Message
      Sleep  5s
      Alert Should Be Present              You need to be logged in to continue.
