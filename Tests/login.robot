@@ -92,4 +92,3 @@ User Click Show History
      Click Element                           //*[@id="show"]
 User Click Hide History
       Click Element         //*[@id="hide"]
-
