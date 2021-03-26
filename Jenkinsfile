@@ -2,13 +2,13 @@ pipeline {
    
   agent any 
   stages {
-    stage('Build') {
+    stage('Junit Build') {
       steps {
         sh "mvn compile"
       }
     }   
     
-    stage('Test') {
+    stage('Junit Test') {
       steps {
         sh "mvn test"
       }
@@ -18,6 +18,11 @@ pipeline {
       }
      }
   }
+   stage('Code Coverage'){
+        steps{
+            jacoco changeBuildStatus: true, runAlways: true, skipCopyofSrcFiles: true
+        }
+     }
     stage('newman') {
             steps {
                 sh 'newman run RestfulBooker.postman_collection.json --environment RestfulBooker.postman_environment.json --reporters junit'
