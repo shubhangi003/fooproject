@@ -26,7 +26,6 @@ Valid Login for infotiv car rental
    # Wait until page contains         When do you want to make your trip?
     #Get Title                        id="userInfoTop"      You are signed in as Ana
     Press Keys                       //*[@id="logout"]      RETURN
-
     Close Browser
 
 
@@ -41,9 +40,7 @@ Invalid login for infotiv car rental
     Press Keys                       //*[@id="login"]      RETURN
     Wait until page contains         Wrong e-mail or password
     Close Browser
-
-
-
+    
 Login with wrong format
     [Tags]                           Test 3
     Open browser                     about:blank        headlesschrome     #${BROWSER}
