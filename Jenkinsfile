@@ -1,4 +1,12 @@
 pipeline {
+  agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/shubhangi003/mavenfooproject.git'
+            }
+        }
+  
   agent any 
   stages {
     stage('Build') {
